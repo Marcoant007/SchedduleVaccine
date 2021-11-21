@@ -44,7 +44,4 @@ public class Paciente extends Pessoa  {
     public void setCep(String cep) {
         this.cep = cep;
     }
-    
-   
-
 }
