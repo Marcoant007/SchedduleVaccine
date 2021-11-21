@@ -6,7 +6,6 @@ package View;
 
 
 import Model.Paciente;
-import Model.Pessoa;
 import Model.Usuario;
 import Model.Vacina;
 
