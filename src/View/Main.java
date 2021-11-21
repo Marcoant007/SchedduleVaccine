@@ -4,6 +4,10 @@
  */
 package View;
 
+
+import Model.Paciente;
+import Model.Pessoa;
+import Model.Usuario;
 import Model.Vacina;
 
 /**
@@ -13,12 +17,15 @@ import Model.Vacina;
 public class Main {
     
     public static void main(String[] args) {
-        String nome =  "Marco";
-        System.err.println(nome);
         
         Vacina vacina = new Vacina( 1, "corona", 0);
-        System.out.println(vacina.getDescricao());
-         System.out.println(vacina.getValor());
+         
+         Paciente paciente = new Paciente(1, "Marco", "Rua josé fodase","29175230");
+         System.out.println(paciente.getNome());
+         
+         Usuario usuario = new Usuario(1, "Médico", "1232141234");
+         System.out.println(usuario);
+         
     }
     
 }
