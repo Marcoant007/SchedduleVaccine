@@ -5,17 +5,23 @@
  */
 package View;
 
+import Controller.LoginController;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author marco
  */
 public class login extends javax.swing.JFrame {
 
+    private final LoginController controller;
+
     /**
      * Creates new form login
      */
     public login() {
         initComponents();
+        controller = new LoginController(this);
     }
 
     /**
@@ -41,7 +47,7 @@ public class login extends javax.swing.JFrame {
         InputUsuario.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         InputUsuario.setForeground(new java.awt.Color(76, 203, 223));
         InputUsuario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        InputUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.CROSSHAIR_CURSOR));
+        InputUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         InputUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 InputUsuarioActionPerformed(evt);
@@ -100,7 +106,8 @@ public class login extends javax.swing.JFrame {
     }//GEN-LAST:event_InputSenhaActionPerformed
 
     private void ButtonEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonEntrarActionPerformed
-        // TODO add your handling code here:
+        this.controller.Tasks();
+        
     }//GEN-LAST:event_ButtonEntrarActionPerformed
 
     /**
@@ -147,4 +154,8 @@ public class login extends javax.swing.JFrame {
     private javax.swing.JLabel TextUsuario;
     private javax.swing.JLabel jLabelBackground;
     // End of variables declaration//GEN-END:variables
+
+    public void openMessage(String message) {
+        JOptionPane.showMessageDialog(null, message);
+    }
 }
