@@ -5,6 +5,7 @@
 package View;
 
 
+import Model.Agendamento;
 import Model.Paciente;
 import Model.Usuario;
 import Model.Vacina;
@@ -20,10 +21,11 @@ public class Main {
         Vacina vacina = new Vacina( 1, "corona", 0);
          
          Paciente paciente = new Paciente(1, "Marco", "Rua josé fodase","29175230");
-         System.out.println(paciente.getNome());
          
          Usuario usuario = new Usuario(1, "Médico", "1232141234");
-         System.out.println(usuario);
+         
+         Agendamento agendamento = new Agendamento(1, paciente, vacina, 0, "27/02/2022 09:30" );
+         System.out.println(agendamento.getPaciente().getNome());
          
     }
     
