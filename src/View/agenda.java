@@ -52,7 +52,6 @@ public class agenda extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTable1.setBackground(new java.awt.Color(34, 145, 222));
-        jTable1.setBorder(null);
         jTable1.setFont(new java.awt.Font("Ubuntu", 1, 14)); // NOI18N
         jTable1.setForeground(new java.awt.Color(254, 254, 254));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -133,8 +132,6 @@ public class agenda extends javax.swing.JFrame {
         LabelObservacao.setForeground(new java.awt.Color(53, 53, 53));
         LabelObservacao.setText("Observações : ");
         getContentPane().add(LabelObservacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 140, -1, -1));
-
-        TextAreaObservacao.setText("jTextField1");
         getContentPane().add(TextAreaObservacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(669, 140, 530, 310));
         getContentPane().add(InputObservação, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 140, 280, 30));
 
