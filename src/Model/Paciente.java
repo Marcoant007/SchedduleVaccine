@@ -17,7 +17,7 @@ public class Paciente extends Pessoa  {
     private String endereco;
     private String cep;
 
-    public Paciente(String endereco, String cep, int id, String nome, char sexo, String dataNascimento, String telefone, String email, String cpf) {
+    public Paciente(int id, String nome, char sexo, String dataNascimento, String telefone, String email, String cpf, String endereco, String cep) {
         super(id, nome, sexo, dataNascimento, telefone, email, cpf); //super vai herdar tudo de pessoas;
         this.endereco = endereco;
         this.cep = cep;

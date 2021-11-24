@@ -6,7 +6,10 @@
 package View;
 
 import Controller.LoginController;
+import Model.DAO.Banco;
 import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
 
 /**
  *
@@ -22,6 +25,7 @@ public class login extends javax.swing.JFrame {
     public login() {
         initComponents();
         controller = new LoginController(this);
+        Banco.inicia();
     }
 
     /**
@@ -106,7 +110,7 @@ public class login extends javax.swing.JFrame {
     }//GEN-LAST:event_InputSenhaActionPerformed
 
     private void ButtonEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonEntrarActionPerformed
-        this.controller.Tasks();
+       this.controller.enterTheSystem();
         
     }//GEN-LAST:event_ButtonEntrarActionPerformed
 
@@ -158,4 +162,22 @@ public class login extends javax.swing.JFrame {
     public void openMessage(String message) {
         JOptionPane.showMessageDialog(null, message);
     }
+
+    public JPasswordField getInputSenha() {
+        return InputSenha;
+    }
+
+    public void setInputSenha(JPasswordField InputSenha) {
+        this.InputSenha = InputSenha;
+    }
+
+    public JTextField getInputUsuario() {
+        return InputUsuario;
+    }
+
+    public void setInputUsuario(JTextField InputUsuario) {
+        this.InputUsuario = InputUsuario;
+    }
+    
+    
 }
