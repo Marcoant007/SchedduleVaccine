@@ -34,7 +34,7 @@ public class LoginController {
            menu.setVisible(true);
            this.view.dispose();
        }else {
-           view.openMessage("Usuário e senha inválido");
+           view.openMessage("Usuário e senha inválido, verifique e tente novamente");
        }
     }
     
