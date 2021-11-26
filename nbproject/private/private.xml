@@ -4,7 +4,9 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/marco/Desktop/Project/SchedduleVaccine/src/Controller/LoginController.java</file>
-            <file>file:/C:/Users/marco/Desktop/Project/SchedduleVaccine/src/View/login.java</file>
+            <file>file:/C:/Users/marco/Desktop/Project/SchedduleVaccine/src/View/Agenda.java</file>
+            <file>file:/C:/Users/marco/Desktop/Project/SchedduleVaccine/src/View/MenuHome.java</file>
+            <file>file:/C:/Users/marco/Desktop/Project/SchedduleVaccine/src/Controller/MenuPrincipalController.java</file>
         </group>
     </open-files>
 </project-private>
