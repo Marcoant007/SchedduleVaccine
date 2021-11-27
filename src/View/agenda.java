@@ -5,17 +5,23 @@
  */
 package View;
 
+import Controller.AgendaController;
+import javax.swing.JTable;
+
 /**
  *
  * @author marco
  */
 public class agenda extends javax.swing.JFrame {
-
+    
+    private final AgendaController controller;
     /**
      * Creates new form agenda
      */
     public agenda() {
         initComponents();
+        controller = new AgendaController(this);
+        iniciar();
     }
 
     /**
@@ -48,7 +54,7 @@ public class agenda extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTable1.setBackground(new java.awt.Color(34, 145, 222));
@@ -56,10 +62,7 @@ public class agenda extends javax.swing.JFrame {
         jTable1.setForeground(new java.awt.Color(254, 254, 254));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"1", "Marco", "Pfizer", "0", "19/11/2021", "17:27", "1- Dose"},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+
             },
             new String [] {
                 "Id", "Paciente", "Vacina", "Valor Dose", "Data", "Hora", "Observação"
@@ -227,4 +230,18 @@ public class agenda extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
+
+    private void iniciar() {
+        this.controller.atualizaTabela();
+    }
+
+    public JTable getjTable1() {
+        return jTable1;
+    }
+
+    public void setjTable1(JTable jTable1) {
+        this.jTable1 = jTable1;
+    }
+    
+    
 }
