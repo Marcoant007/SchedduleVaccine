@@ -59,6 +59,15 @@ public class AgendaHelper {
         for (Vacina vacina : vacinas){
             comboBoxModel.addElement(vacina);
         }
+        
+    }
+
+    public Vacina obterVacina() {
+       return (Vacina) view.getComboBoxVacina().getSelectedItem();
+    }
+
+    public void setarValor(float valor) {
+        view.getInputIValor().setText(valor+"");
     }
 
     

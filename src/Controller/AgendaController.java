@@ -42,7 +42,7 @@ public class AgendaController {
     public void atualizaPaciente(){
         
         //Buscar Clientes do banco de dados
-        PacienteDAO pacienteDAO = new PaceienteDAO();
+        PacienteDAO pacienteDAO = new PacienteDAO();
         ArrayList<Paciente> pacientes = pacienteDAO.selectAll();
         
         //Exibir Clentes no combobox cliente
@@ -56,12 +56,9 @@ public class AgendaController {
         
         //Exibir Clentes no combobox cliente
         helper.preencherVacinas(vacinas);
-        
+     }
+    public void atualizaValor() {
+        Vacina vacina = helper.obterVacina();
+        helper.setarValor(vacina.getValor());
     }
-
-    private static class PaceienteDAO extends PacienteDAO {
-
-        public PaceienteDAO() {
-        }
     }
-}
