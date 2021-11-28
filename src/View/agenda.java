@@ -6,6 +6,7 @@
 package View;
 
 import Controller.AgendaController;
+import javax.swing.JComboBox;
 import javax.swing.JTable;
 
 /**
@@ -37,7 +38,7 @@ public class agenda extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         LabelId = new javax.swing.JLabel();
         LabelCliente = new javax.swing.JLabel();
-        ComboBoxUsuario = new javax.swing.JComboBox<>();
+        ComboBoxPaciente = new javax.swing.JComboBox<>();
         LabelVacina = new javax.swing.JLabel();
         ComboBoxVacina = new javax.swing.JComboBox<>();
         LabelValor = new javax.swing.JLabel();
@@ -82,15 +83,14 @@ public class agenda extends javax.swing.JFrame {
         LabelCliente.setText("Paciente:");
         getContentPane().add(LabelCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, -1, -1));
 
-        ComboBoxUsuario.setEditable(true);
-        ComboBoxUsuario.setForeground(new java.awt.Color(76, 203, 223));
-        ComboBoxUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Alan", "Marco", "Karol", " " }));
-        ComboBoxUsuario.addActionListener(new java.awt.event.ActionListener() {
+        ComboBoxPaciente.setEditable(true);
+        ComboBoxPaciente.setForeground(new java.awt.Color(76, 203, 223));
+        ComboBoxPaciente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ComboBoxUsuarioActionPerformed(evt);
+                ComboBoxPacienteActionPerformed(evt);
             }
         });
-        getContentPane().add(ComboBoxUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 210, 280, 30));
+        getContentPane().add(ComboBoxPaciente, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 210, 280, 30));
 
         LabelVacina.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         LabelVacina.setForeground(new java.awt.Color(53, 53, 53));
@@ -99,7 +99,6 @@ public class agenda extends javax.swing.JFrame {
 
         ComboBoxVacina.setEditable(true);
         ComboBoxVacina.setForeground(new java.awt.Color(76, 203, 223));
-        ComboBoxVacina.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dengue", "PFizer", "CoronaVac", " " }));
         ComboBoxVacina.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ComboBoxVacinaActionPerformed(evt);
@@ -158,9 +157,9 @@ public class agenda extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ComboBoxUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBoxUsuarioActionPerformed
+    private void ComboBoxPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBoxPacienteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ComboBoxUsuarioActionPerformed
+    }//GEN-LAST:event_ComboBoxPacienteActionPerformed
 
     private void ComboBoxVacinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBoxVacinaActionPerformed
         // TODO add your handling code here:
@@ -210,7 +209,7 @@ public class agenda extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ButtonAgendar;
-    private javax.swing.JComboBox<String> ComboBoxUsuario;
+    private javax.swing.JComboBox<String> ComboBoxPaciente;
     private javax.swing.JComboBox<String> ComboBoxVacina;
     private javax.swing.JTextField InputIData;
     private javax.swing.JTextField InputIHora;
@@ -233,6 +232,8 @@ public class agenda extends javax.swing.JFrame {
 
     private void iniciar() {
         this.controller.atualizaTabela();
+        this.controller.atualizaPaciente();
+        this.controller.atualizaVacina();
     }
 
     public JTable getjTable1() {
@@ -242,6 +243,21 @@ public class agenda extends javax.swing.JFrame {
     public void setjTable1(JTable jTable1) {
         this.jTable1 = jTable1;
     }
-    
+
+    public JComboBox<String> getComboBoxPaciente() {
+        return ComboBoxPaciente;
+    }
+
+    public void setComboBoxPaciente(JComboBox<String> ComboBoxPaciente) {
+        this.ComboBoxPaciente = ComboBoxPaciente;
+    }
+
+    public JComboBox<String> getComboBoxVacina() {
+        return ComboBoxVacina;
+    }
+
+    public void setComboBoxVacina(JComboBox<String> ComboBoxVacina) {
+        this.ComboBoxVacina = ComboBoxVacina;
+    }
     
 }

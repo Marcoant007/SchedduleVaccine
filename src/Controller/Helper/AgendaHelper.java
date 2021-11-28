@@ -6,8 +6,11 @@
 package Controller.Helper;
 
 import Model.Agendamento;
+import Model.Paciente;
+import Model.Vacina;
 import View.agenda;
 import java.util.ArrayList;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -41,5 +44,22 @@ public class AgendaHelper {
             });
         }
     }
-           
+
+    public void preencherPacientes(ArrayList<Paciente> pacientes) {
+        DefaultComboBoxModel comboBoxModel = (DefaultComboBoxModel) view.getComboBoxPaciente().getModel();
+        
+        for (Paciente paciente : pacientes){
+            comboBoxModel.addElement(paciente);
+        }
+    }
+
+    public void preencherVacinas(ArrayList<Vacina> vacinas) {
+        DefaultComboBoxModel comboBoxModel = (DefaultComboBoxModel) view.getComboBoxVacina().getModel();
+        
+        for (Vacina vacina : vacinas){
+            comboBoxModel.addElement(vacina);
+        }
+    }
+
+    
 }

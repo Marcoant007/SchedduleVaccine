@@ -8,6 +8,11 @@ package Controller;
 import Controller.Helper.AgendaHelper;
 import Model.Agendamento;
 import Model.DAO.AgendamentoDAO;
+import static Model.DAO.Banco.paciente;
+import Model.DAO.PacienteDAO;
+import Model.DAO.VacinaDAO;
+import Model.Paciente;
+import Model.Vacina;
 import View.agenda;
 import java.util.ArrayList;
 
@@ -32,5 +37,31 @@ public class AgendaController {
                 
         // Exibir esta em View
         helper.preencherTabela(agendamentos); 
+    }
+    
+    public void atualizaPaciente(){
+        
+        //Buscar Clientes do banco de dados
+        PacienteDAO pacienteDAO = new PaceienteDAO();
+        ArrayList<Paciente> pacientes = pacienteDAO.selectAll();
+        
+        //Exibir Clentes no combobox cliente
+        helper.preencherPacientes(pacientes);
+    }
+    
+    public void atualizaVacina(){
+        //Buscar Clientes do banco de dados
+        VacinaDAO vacinaDAO = new VacinaDAO();
+        ArrayList<Vacina> vacinas = vacinaDAO.selectAll();
+        
+        //Exibir Clentes no combobox cliente
+        helper.preencherVacinas(vacinas);
+        
+    }
+
+    private static class PaceienteDAO extends PacienteDAO {
+
+        public PaceienteDAO() {
+        }
     }
 }
