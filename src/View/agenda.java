@@ -8,6 +8,7 @@ package View;
 import Controller.AgendaController;
 import javax.swing.JComboBox;
 import javax.swing.JTable;
+import javax.swing.JTextField;
 
 /**
  *
@@ -99,6 +100,11 @@ public class agenda extends javax.swing.JFrame {
 
         ComboBoxVacina.setEditable(true);
         ComboBoxVacina.setForeground(new java.awt.Color(76, 203, 223));
+        ComboBoxVacina.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                ComboBoxVacinaItemStateChanged(evt);
+            }
+        });
         ComboBoxVacina.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ComboBoxVacinaActionPerformed(evt);
@@ -169,6 +175,10 @@ public class agenda extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_InputIHoraActionPerformed
 
+    private void ComboBoxVacinaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_ComboBoxVacinaItemStateChanged
+        this.controller.atualizaValor();
+    }//GEN-LAST:event_ComboBoxVacinaItemStateChanged
+
     /**
      * @param args the command line arguments
      */
@@ -234,6 +244,7 @@ public class agenda extends javax.swing.JFrame {
         this.controller.atualizaTabela();
         this.controller.atualizaPaciente();
         this.controller.atualizaVacina();
+        this.controller.atualizaValor();
     }
 
     public JTable getjTable1() {
@@ -259,5 +270,14 @@ public class agenda extends javax.swing.JFrame {
     public void setComboBoxVacina(JComboBox<String> ComboBoxVacina) {
         this.ComboBoxVacina = ComboBoxVacina;
     }
+
+    public JTextField getInputIValor() {
+        return InputIValor;
+    }
+
+    public void setInputIValor(JTextField InputIValor) {
+        this.InputIValor = InputIValor;
+    }
+    
     
 }
