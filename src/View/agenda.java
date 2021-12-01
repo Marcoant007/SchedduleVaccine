@@ -148,6 +148,11 @@ public class agenda extends javax.swing.JFrame {
         ButtonAgendar.setForeground(new java.awt.Color(254, 254, 254));
         ButtonAgendar.setText("Agendar Vacina");
         ButtonAgendar.setToolTipText("");
+        ButtonAgendar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonAgendarActionPerformed(evt);
+            }
+        });
         getContentPane().add(ButtonAgendar, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 470, 530, 50));
 
         jLabel2.setBackground(new java.awt.Color(254, 254, 254));
@@ -178,6 +183,10 @@ public class agenda extends javax.swing.JFrame {
     private void ComboBoxVacinaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_ComboBoxVacinaItemStateChanged
         this.controller.atualizaValor();
     }//GEN-LAST:event_ComboBoxVacinaItemStateChanged
+
+    private void ButtonAgendarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonAgendarActionPerformed
+        this.controller.agendar();
+    }//GEN-LAST:event_ButtonAgendarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -277,6 +286,38 @@ public class agenda extends javax.swing.JFrame {
 
     public void setInputIValor(JTextField InputIValor) {
         this.InputIValor = InputIValor;
+    }
+
+    public JTextField getInputIData() {
+        return InputIData;
+    }
+
+    public void setInputIData(JTextField InputIData) {
+        this.InputIData = InputIData;
+    }
+
+    public JTextField getInputIHora() {
+        return InputIHora;
+    }
+
+    public void setInputIHora(JTextField InputIHora) {
+        this.InputIHora = InputIHora;
+    }
+
+    public JTextField getInputObservação() {
+        return InputObservação;
+    }
+
+    public void setInputObservação(JTextField InputObservação) {
+        this.InputObservação = InputObservação;
+    }
+
+    public JTextField getTextAreaObservacao() {
+        return TextAreaObservacao;
+    }
+
+    public void setTextAreaObservacao(JTextField TextAreaObservacao) {
+        this.TextAreaObservacao = TextAreaObservacao;
     }
     
     

@@ -17,7 +17,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Hp
  */
-public class AgendaHelper {
+public class AgendaHelper implements IHelper{
     
     private final agenda view;
 
@@ -61,13 +61,47 @@ public class AgendaHelper {
         }
         
     }
-
+    public Paciente obterPaciente() {
+       return (Paciente) view.getComboBoxPaciente().getSelectedItem();
+    }
+    
+    
     public Vacina obterVacina() {
        return (Vacina) view.getComboBoxVacina().getSelectedItem();
     }
 
     public void setarValor(float valor) {
         view.getInputIValor().setText(valor+"");
+    }
+
+    @Override
+    public Agendamento pegarModeloUsuario() {
+        //Novo Agendamento(Agendamento)
+       String idString  = view.getInputObservação().getText();
+       int id = Integer.parseInt(idString);
+       Paciente paciente = obterPaciente();
+       Vacina vacina = obterVacina();
+       String valorString = view.getInputIValor().getText();
+       float valor = Float.parseFloat(valorString);
+       String data = view.getInputIData().getText();
+       String hora = view.getInputIHora().getText();
+       String dataHora = data + "" + hora;
+       String observacao = view.getTextAreaObservacao().getText();
+       
+       Agendamento agendamento = new Agendamento(id,paciente,vacina,valor,dataHora,observacao);
+       return agendamento;
+       
+       
+    }
+
+    @Override
+    public void cleanScreen() {
+        view.getInputObservação().setText("");
+        view.getInputIData().setText("");
+        view.getInputIHora().setText("");
+        view.getTextAreaObservacao().setText("");
+        
+        
     }
 
     
