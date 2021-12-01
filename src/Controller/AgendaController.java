@@ -61,4 +61,12 @@ public class AgendaController {
         Vacina vacina = helper.obterVacina();
         helper.setarValor(vacina.getValor());
     }
+    public void agendar(){
+        
+        Agendamento agendamento = helper.pegarModeloUsuario();
+        new AgendamentoDAO().insert(agendamento);
+        
+        atualizaTabela();
+        helper.cleanScreen();
+    }
     }

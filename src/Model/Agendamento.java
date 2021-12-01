@@ -36,6 +36,11 @@ public class Agendamento {
         }
     }
 
+    public Agendamento(int id, Paciente paciente, Vacina vacina, float valor, String data, String observacao) {
+        this(id,paciente,vacina,valor,data);
+        this.observacao = observacao;
+    }
+
     public int getId() {
         return id;
     }
