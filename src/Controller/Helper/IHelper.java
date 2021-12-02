@@ -11,6 +11,4 @@ package Controller.Helper;
 public interface IHelper {
     public abstract Object pegarModeloUsuario();
     public abstract void cleanScreen();
-    
-    
 }
