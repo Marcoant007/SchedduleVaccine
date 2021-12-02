@@ -76,16 +76,19 @@ public class AgendaHelper implements IHelper{
 
     @Override
     public Agendamento pegarModeloUsuario() {
-        //Novo Agendamento(Agendamento)
-       String idString  = view.getInputObservação().getText();
+        //TODO converta os atributos para string
+       String idString  = view.getInputId().getText();  
        int id = Integer.parseInt(idString);
+       
        Paciente paciente = obterPaciente();
        Vacina vacina = obterVacina();
+       
        String valorString = view.getInputIValor().getText();
        float valor = Float.parseFloat(valorString);
+       
        String data = view.getInputIData().getText();
        String hora = view.getInputIHora().getText();
-       String dataHora = data + "" + hora;
+       String dataHora = data + " " + hora;
        String observacao = view.getTextAreaObservacao().getText();
        
        Agendamento agendamento = new Agendamento(id,paciente,vacina,valor,dataHora,observacao);
@@ -96,12 +99,10 @@ public class AgendaHelper implements IHelper{
 
     @Override
     public void cleanScreen() {
-        view.getInputObservação().setText("");
+        view.getInputId().setText("");
         view.getInputIData().setText("");
         view.getInputIHora().setText("");
         view.getTextAreaObservacao().setText("");
-        
-        
     }
 
     

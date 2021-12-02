@@ -10,6 +10,7 @@ import javax.swing.JComboBox;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 
+
 /**
  *
  * @author marco
@@ -50,7 +51,7 @@ public class agenda extends javax.swing.JFrame {
         InputIHora = new javax.swing.JTextField();
         LabelObservacao = new javax.swing.JLabel();
         TextAreaObservacao = new javax.swing.JTextField();
-        InputObservação = new javax.swing.JTextField();
+        TextId = new javax.swing.JTextField();
         ButtonAgendar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -141,7 +142,13 @@ public class agenda extends javax.swing.JFrame {
         LabelObservacao.setText("Observações : ");
         getContentPane().add(LabelObservacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 140, -1, -1));
         getContentPane().add(TextAreaObservacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(669, 140, 530, 310));
-        getContentPane().add(InputObservação, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 140, 280, 30));
+
+        TextId.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TextIdActionPerformed(evt);
+            }
+        });
+        getContentPane().add(TextId, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 140, 280, 30));
 
         ButtonAgendar.setBackground(new java.awt.Color(34, 145, 222));
         ButtonAgendar.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
@@ -188,6 +195,10 @@ public class agenda extends javax.swing.JFrame {
         this.controller.agendar();
     }//GEN-LAST:event_ButtonAgendarActionPerformed
 
+    private void TextIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextIdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TextIdActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -233,7 +244,6 @@ public class agenda extends javax.swing.JFrame {
     private javax.swing.JTextField InputIData;
     private javax.swing.JTextField InputIHora;
     private javax.swing.JTextField InputIValor;
-    private javax.swing.JTextField InputObservação;
     private javax.swing.JLabel LabelCliente;
     private javax.swing.JLabel LabelData;
     private javax.swing.JLabel LabelHora;
@@ -242,6 +252,7 @@ public class agenda extends javax.swing.JFrame {
     private javax.swing.JLabel LabelVacina;
     private javax.swing.JLabel LabelValor;
     private javax.swing.JTextField TextAreaObservacao;
+    private javax.swing.JTextField TextId;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -304,12 +315,12 @@ public class agenda extends javax.swing.JFrame {
         this.InputIHora = InputIHora;
     }
 
-    public JTextField getInputObservação() {
-        return InputObservação;
+    public JTextField getInputId() {
+        return TextId;
     }
 
-    public void setInputObservação(JTextField InputObservação) {
-        this.InputObservação = InputObservação;
+    public void setInputId(JTextField InputObservação) {
+        this.TextId = InputObservação;
     }
 
     public JTextField getTextAreaObservacao() {

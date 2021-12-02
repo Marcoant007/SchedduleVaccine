@@ -37,7 +37,7 @@ public class Agendamento {
     }
 
     public Agendamento(int id, Paciente paciente, Vacina vacina, float valor, String data, String observacao) {
-        this(id,paciente,vacina,valor,data);
+        this(id,paciente,vacina,valor,data); //Chamando o construtor a cima para ficar mais limpo o código
         this.observacao = observacao;
     }
 
@@ -48,11 +48,13 @@ public class Agendamento {
     public void setId(int id) {
         this.id = id;
     }
+    
 
     public Paciente getPaciente() {
         return paciente;
     }
-
+    
+    
     public void setPaciente(Paciente paciente) {
         this.paciente = paciente;
     }
