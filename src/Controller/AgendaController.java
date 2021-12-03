@@ -13,6 +13,7 @@ import Model.DAO.PacienteDAO;
 import Model.DAO.VacinaDAO;
 import Model.Paciente;
 import Model.Vacina;
+import Services.Notification;
 import View.agenda;
 import java.util.ArrayList;
 
@@ -64,7 +65,9 @@ public class AgendaController {
     public void agendar(){
         Agendamento agendamento = helper.pegarModeloUsuario();
         new AgendamentoDAO().insert(agendamento);
+        Notification notification = new Notification();
         atualizaTabela();
         helper.cleanScreen();
+        notification.NotificarAgendamentoPorEmail(agendamento);
     }
     }

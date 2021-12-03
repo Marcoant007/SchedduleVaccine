@@ -34,13 +34,8 @@ public class menuHome extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        MenuCadastro = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
         MenuOperacao = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
-        MenuOperacao1 = new javax.swing.JMenu();
-        jMenuItem4 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -50,34 +45,6 @@ public class menuHome extends javax.swing.JFrame {
         jMenuBar1.setBackground(new java.awt.Color(0, 153, 255));
         jMenuBar1.setBorder(null);
         jMenuBar1.setForeground(new java.awt.Color(0, 153, 255));
-
-        MenuCadastro.setBackground(new java.awt.Color(255, 255, 255));
-        MenuCadastro.setForeground(new java.awt.Color(0, 153, 204));
-        MenuCadastro.setText("Cadastro");
-        MenuCadastro.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        MenuCadastro.setMargin(new java.awt.Insets(4, 8, 4, 8));
-
-        jMenuItem1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/icons/icon_user.png"))); // NOI18N
-        jMenuItem1.setText("Paciente");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
-            }
-        });
-        MenuCadastro.add(jMenuItem1);
-
-        jMenuItem2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/icons/icon_vacina.png"))); // NOI18N
-        jMenuItem2.setLabel("Vacina");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
-            }
-        });
-        MenuCadastro.add(jMenuItem2);
-
-        jMenuBar1.add(MenuCadastro);
 
         MenuOperacao.setBackground(new java.awt.Color(0, 102, 153));
         MenuOperacao.setForeground(new java.awt.Color(0, 153, 204));
@@ -96,20 +63,6 @@ public class menuHome extends javax.swing.JFrame {
         MenuOperacao.add(jMenuItem3);
 
         jMenuBar1.add(MenuOperacao);
-
-        MenuOperacao1.setBackground(new java.awt.Color(255, 255, 255));
-        MenuOperacao1.setForeground(new java.awt.Color(0, 153, 204));
-        MenuOperacao1.setText("Relatórios");
-        MenuOperacao1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        MenuOperacao1.setMargin(new java.awt.Insets(4, 8, 4, 8));
-
-        jMenuItem4.setBackground(new java.awt.Color(0, 153, 204));
-        jMenuItem4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jMenuItem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/calendar-regular 1.png"))); // NOI18N
-        jMenuItem4.setText("Serviço");
-        MenuOperacao1.add(jMenuItem4);
-
-        jMenuBar1.add(MenuOperacao1);
 
         setJMenuBar(jMenuBar1);
 
@@ -130,14 +83,6 @@ public class menuHome extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
-
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         this.controller.navegarParaAgenda();
@@ -182,14 +127,9 @@ public class menuHome extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu MenuCadastro;
     private javax.swing.JMenu MenuOperacao;
-    private javax.swing.JMenu MenuOperacao1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
     // End of variables declaration//GEN-END:variables
 }

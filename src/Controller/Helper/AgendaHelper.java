@@ -99,7 +99,7 @@ public class AgendaHelper implements IHelper{
 
     @Override
     public void cleanScreen() {
-        view.getInputId().setText("");
+        view.getInputId().setText("0");
         view.getInputIData().setText("");
         view.getInputIHora().setText("");
         view.getTextAreaObservacao().setText("");
