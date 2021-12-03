@@ -143,6 +143,8 @@ public class agenda extends javax.swing.JFrame {
         getContentPane().add(LabelObservacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 140, -1, -1));
         getContentPane().add(TextAreaObservacao, new org.netbeans.lib.awtextra.AbsoluteConstraints(669, 140, 530, 310));
 
+        TextId.setText("0");
+        TextId.setEnabled(false);
         TextId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TextIdActionPerformed(evt);
@@ -329,6 +331,10 @@ public class agenda extends javax.swing.JFrame {
 
     public void setTextAreaObservacao(JTextField TextAreaObservacao) {
         this.TextAreaObservacao = TextAreaObservacao;
+    }
+
+    public void openMessage(String tarefa_executada_) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     
