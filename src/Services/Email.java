@@ -5,22 +5,22 @@ import org.apache.commons.mail.EmailException;
 import org.apache.commons.mail.SimpleEmail;
 
 /**
-  @author Marco Antonio
+ * @author Marco Antonio
  */
 public class Email {
-    static final String Nome = "vaccineschedulefaesa@gmail.com";
-    static final String Senha = "vacina123";
-    private String assunto ;
+
+    static final String nomeEmail = "vaccineschedulefaesa@gmail.com";
+    static final String senhaEmail = "vacina123";
+    private String assunto;
     private String mensagem;
     private String destinatario;
- 
 
     public Email(String assunto, String mensagem, String destinatario) {
         this.assunto = assunto;
         this.mensagem = mensagem;
         this.destinatario = destinatario;
     }
-    
+
     public String getAssunto() {
         return assunto;
     }
@@ -44,29 +44,27 @@ public class Email {
     public void setDestinatario(String destinatario) {
         this.destinatario = destinatario;
     }
-   
     /**
      * Função para enviar o e-mail ao destinatário.
      */
-    public void enviar (){
+    public void enviar() {
         SimpleEmail email = new SimpleEmail();
-            email.setSSLOnConnect(true);
-            email.setHostName("smtp.gmail.com");
-            email.setSslSmtpPort("465");
-       email.setAuthenticator(new DefaultAuthenticator(Nome, Senha));
-       try {
-           email.setFrom(Nome);
+        email.setHostName("smtp.gmail.com");
+        email.setSslSmtpPort("587");
+        email.setAuthenticator(new DefaultAuthenticator(nomeEmail, senhaEmail));
+        email.setSSLOnConnect(true);
+        try {
+            email.setFrom(nomeEmail);
+            email.setSubject(this.assunto);
+            email.setMsg(this.mensagem);
+            email.addTo(this.destinatario);
+             System.out.println("Enviando email para :" + this.destinatario);
+            email.setDebug(true);
+            email.send();
+         
 
-           email.setDebug(true);
-
-           email.setSubject(this.assunto);
-           email.setMsg(this.mensagem);
-           email.addTo(this.destinatario);//por favor trocar antes de testar!!!!
-
-           email.send();
-
-       } catch (EmailException e) {
-           e.printStackTrace();
-       }
+        } catch (EmailException e) {
+            e.printStackTrace();
+        }
     }
 }
